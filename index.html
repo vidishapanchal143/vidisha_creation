@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidisha | AI Video Creator, Marketing Ad Designer & AI Video Editor</title>
+  <meta name="description" content="Explore the creative portfolio of Vidisha, specializing in AI Video Creation, Marketing Ad Poster Design, and AI Video Editing for brands, businesses, products, and digital campaigns.">
+  
+  <meta property="og:title" content="Vidisha | AI Video Creator, Marketing Ad Designer & AI Video Editor">
+  <meta property="og:description" content="Explore the creative portfolio of Vidisha, specializing in AI Video Creation, Marketing Ad Poster Design, and AI Video Editing for brands, businesses, products, and digital campaigns.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-image-placeholder.jpg">
+  <meta property="og:url" content="https://vidisha-portfolio.example.com">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- =========================
+VIDISHA PORTFOLIO — QUICK EDIT GUIDE
+
+1. Replace profile image:
+   images/vidisha-profile.jpg
+
+2. Add portfolio images (posters/thumbnails):
+   images/project-1.jpg, images/poster-1.jpg, etc.
+
+3. Add portfolio videos:
+   videos/project-1.mp4, etc.
+
+4. To set up videos: use data-type="video" and data-video="videos/xxx.mp4"
+   To set up posters: use data-type="image" and data-image="images/xxx.jpg"
+
+5. Edit contact information in the Contact section.
+
+6. Add real social media profile links in the Footer.
+
+7. Replace testimonial placeholders with real testimonials.
+
+========================= -->
+
+  <!-- LOADER -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="loader-name">VIDISHA</span>
+        <span class="loader-tagline">AI-POWERED CREATIVE PROFESSIONAL</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <!-- CANVAS for particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/917567237009?text=Hi%20Vidisha!%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20your%20creative%20services.%20I%20would%20like%20to%20discuss%20a%20project%20with%20you." 
+     target="_blank" rel="noopener noreferrer" 
+     id="whatsapp-float" class="whatsapp-float" 
+     aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </svg>
+    <span class="whatsapp-pulse"></span>
+    <span class="whatsapp-tooltip">Let's create something amazing!</span>
+  </a>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">VIDISHA<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta btn">Let's Work Together</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="mobile-cta btn">Let's Work Together</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    
+    <!-- SECTION: HERO -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg-effects">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+      </div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-badge">AI VIDEO CREATOR • MARKETING AD DESIGNER • AI VIDEO EDITOR</span>
+          <h1 class="hero-title">I Create Visuals That Make Brands <span class="highlight">Impossible to Ignore.</span></h1>
+          <p class="hero-tagline" style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--accent-secondary); margin-top: -10px; margin-bottom: 16px; letter-spacing: 0.05em;">AI Videos &bull; Marketing Ad Posters &bull; AI Video Editing</p>
+          <p class="hero-subtitle">I help brands and businesses turn their ideas into attention-grabbing AI videos, creative marketing ad posters, and professionally edited video content.</p>
+          <div class="hero-cta">
+            <a href="#work" class="btn btn-primary">
+              Explore My Work
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              Start a Project
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">30+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-portrait-wrapper" data-tilt>
+            <div class="portrait-frame">
+              <div class="portrait-glow"></div>
+              <img src="images/vidisha-profile.jpg" alt="Vidisha - AI Video Creator, Marketing Ad Designer and AI Video Editor" class="portrait-img" loading="eager" style="object-fit: cover; object-position: 50% 15%;">
+              <div class="portrait-overlay"></div>
+              
+              <!-- Frosted Glass Name Tag Overlay -->
+              <div class="portrait-name-tag">
+                <span class="name-tag-title">VIDISHA</span>
+                <span class="name-tag-subtitle">AI-Powered Creative Professional</span>
+              </div>
+            </div>
+            <div class="floating-badge badge-1">✦ AI Videos</div>
+            <div class="floating-badge badge-2">✦ Ad Creatives</div>
+            <div class="floating-badge badge-3">✦ Video Editing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ABOUT -->
+    <section id="about" class="about-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Creativity Meets <span class="highlight">Artificial Intelligence</span></h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image-wrapper">
+            <div class="about-portrait-frame" data-tilt>
+              <div class="portrait-glow"></div>
+              <img src="images/vidisha-profile.jpg" alt="Vidisha - AI Video Creator, Marketing Ad Designer and AI Video Editor" class="portrait-img" loading="lazy" style="object-fit: cover; object-position: 50% 15%;">
+              <div class="portrait-overlay"></div>
+            </div>
+          </div>
+          <div class="about-details">
+            <div class="about-text">
+              <p>I'm Vidisha, an AI-powered creative professional specializing in AI Video Creation, Marketing Ad Poster Design, and AI Video Editing. I help brands, businesses, and creators transform their ideas into visually engaging content designed to capture attention and create a strong digital presence.</p>
+              <p>Working closely with my clients, I ensure that every project is perfectly aligned with their vision while bringing unique, AI-driven creative elements to the table that make the final result stand out.</p>
+              <a href="#contact" class="btn btn-primary" style="margin-bottom: 32px; display: inline-block;">Get In Touch</a>
+            </div>
+            <div class="about-strengths">
+              <div class="strength-card" data-tilt>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <h3>AI Video Creation</h3>
+                <p>Cutting-edge tools for unmatched visuals.</p>
+              </div>
+              <div class="strength-card" data-tilt>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                <h3>Creative Storytelling</h3>
+                <p>Crafting narratives that resonate.</p>
+              </div>
+              <div class="strength-card" data-tilt>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                <h3>Marketing Ad Posters</h3>
+                <p>Showcasing products with style.</p>
+              </div>
+              <div class="strength-card" data-tilt>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                <h3>AI Video Editing</h3>
+                <p>Engaging reels optimized for platforms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATIVE SERVICES STATEMENT -->
+    <section class="statement-section section">
+      <div class="section-container">
+        <p class="statement-text">
+          "From AI-generated videos to scroll-stopping marketing posters and creative video editing — I turn ideas into visuals designed to get attention."
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: SERVICES -->
+    <section id="services" class="services-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">What I Offer</span>
+          <h2 class="section-title">Services <span class="highlight">Tailored For You</span></h2>
+          <p class="section-subtitle">From product showcases to cinematic storytelling, I create AI-powered visuals that captivate your audience.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card" data-tilt>
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            </div>
+            <h3 class="service-title">AI Video Creation</h3>
+            <p class="service-desc">Create engaging and visually impressive AI-powered videos for brands, products, businesses, advertisements, social media campaigns, and creative concepts.</p>
+            <ul style="margin-top:15px; color:var(--text-secondary); font-size:0.9rem; padding-left:20px;">
+              <li>AI Product Videos</li>
+              <li>AI Advertisement Videos</li>
+              <li>AI UGC-Style Videos</li>
+              <li>Cinematic AI Videos</li>
+              <li>Social Media AI Videos</li>
+              <li>Custom AI Video Projects</li>
+            </ul>
+            <div class="service-glow"></div>
+          </div>
+          
+          <div class="service-card" data-tilt>
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3 class="service-title">Marketing Ad Poster Design</h3>
+            <p class="service-desc">Create attractive and professional marketing posters designed to showcase products, services, offers, and brands.</p>
+            <ul style="margin-top:15px; color:var(--text-secondary); font-size:0.9rem; padding-left:20px;">
+              <li>Product Advertisement Posters</li>
+              <li>Social Media Marketing Posts</li>
+              <li>Promotional Posters</li>
+              <li>Brand Campaign Creatives</li>
+              <li>Instagram &amp; Facebook Ad Creatives</li>
+              <li>Product-Focused Visual Designs</li>
+            </ul>
+            <div class="service-glow"></div>
+          </div>
+
+          <div class="service-card" data-tilt>
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <h3 class="service-title">AI Video Editing</h3>
+            <p class="service-desc">Provide creative AI-assisted video editing to transform raw or existing content into polished, engaging videos.</p>
+            <ul style="margin-top:15px; color:var(--text-secondary); font-size:0.9rem; padding-left:20px;">
+              <li>Promotional Video Editing</li>
+              <li>Social Media Reel Editing</li>
+              <li>Product Video Editing</li>
+              <li>AI-Enhanced Video Editing</li>
+              <li>Creative Transitions &amp; Visual Effects</li>
+              <li>Short-Form Content Editing</li>
+            </ul>
+            <div class="service-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FEATURED WORK -->
+    <div class="featured-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Selected Work</span>
+          <h2 class="section-title"><span class="highlight">Featured</span> Creative Work</h2>
+          <p class="section-subtitle">A showcase of the most impactful AI video, poster, and editing campaigns created for global brand styling.</p>
+        </div>
+        <div class="featured-grid">
+          <!-- MAIN FEATURE (AI VIDEO) -->
+          <div class="featured-project main-feature" data-tilt>
+            <div class="featured-media">
+              <video class="project-preview-video" src="videos/project-06.mp4" poster="images/project-06-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="featured-play-overlay">
+                <button class="play-btn modal-trigger" data-type="video" data-video="videos/project-06.mp4" data-title="Vogue Style - Apparel Campaign" data-category="AI Video Creation" data-description="A vibrant promotional video for a clothing line, featuring trendy aesthetics, visual styling, and seasonal fashion branding.">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+              </div>
+              <div class="muted-indicator" style="top: 16px; right: 16px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+            <div class="featured-info" style="padding: 24px;">
+              <span class="featured-category" style="color: var(--accent-primary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: inline-block;">AI Video Creation</span>
+              <h3 class="featured-title" style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 12px;">Vogue Style - Apparel Campaign</h3>
+              <p class="featured-desc" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">A vibrant promotional video for a clothing line, featuring trendy aesthetics, visual styling, and seasonal fashion branding.</p>
+              <button class="btn btn-primary modal-trigger" data-type="video" data-video="videos/project-06.mp4" data-title="Vogue Style - Apparel Campaign" data-category="AI Video Creation" data-description="A vibrant promotional video for a clothing line, featuring trendy aesthetics, visual styling, and seasonal fashion branding.">Watch Project</button>
+            </div>
+          </div>
+
+          <!-- POSTER FEATURE -->
+          <div class="featured-project poster-feature" data-tilt>
+            <div class="featured-media">
+              <img class="featured-thumbnail" src="images/project-03-thumbnail.jpg" alt="Best Marketing Ad Poster Portfolio" loading="lazy">
+              <div class="featured-play-overlay">
+                <button class="play-btn modal-trigger" data-type="image" data-image="images/project-03-thumbnail.jpg" data-title="Marketing & Ad Poster Portfolio" data-category="Marketing Ad Poster Design" data-description="A curated collection of marketing ad posters and branding designs created for social media, product launches, and digital campaigns.">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="featured-info" style="padding: 16px;">
+              <span class="featured-category" style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 4px; display: inline-block;">Marketing Ad Poster Design</span>
+              <h3 class="featured-title" style="font-size: 1.2rem; margin-bottom: 8px;">Marketing & Ad Poster Portfolio</h3>
+            </div>
+          </div>
+
+          <!-- EDITING FEATURE -->
+          <div class="featured-project editing-feature" data-tilt>
+            <div class="featured-media">
+              <video class="project-preview-video" src="videos/project-04.mp4" poster="images/project-04-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="featured-play-overlay">
+                <button class="play-btn modal-trigger" data-type="video" data-video="videos/project-04.mp4" data-title="Glow Up - Cosmetics Video Edit" data-category="AI Video Editing" data-description="A professionally edited promotional video for beauty and cosmetic products, demonstrating transitions, color grading, and dynamic cuts.">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+              </div>
+              <div class="muted-indicator" style="top: 16px; right: 16px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+            <div class="featured-info" style="padding: 16px;">
+              <span class="featured-category" style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 4px; display: inline-block;">AI Video Editing</span>
+              <h3 class="featured-title" style="font-size: 1.2rem; margin-bottom: 8px;">Glow Up - Cosmetics Video Edit</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: MY CREATIVE WORK -->
+    <section id="work" class="portfolio-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">My Creative Work</span>
+          <h2 class="section-title">My Creative <span class="highlight">Work</span></h2>
+          <p class="section-subtitle">Explore a selection of AI-powered videos, creative advertisements, and visual content I've created.</p>
+        </div>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All Work</button>
+          <button class="filter-btn" data-filter="video">AI Videos</button>
+          <button class="filter-btn" data-filter="poster">Marketing Ad Posters</button>
+          <button class="filter-btn" data-filter="editing">AI Video Editing</button>
+        </div>
+        <div class="portfolio-grid">
+          
+          <!-- Card 1: Queen Touch -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-01.mp4" poster="images/project-01-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Queen Touch - Luxury Skincare Ad</h3>
+                <p class="project-desc">An elegant product advertisement showcasing cosmetics branding.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-01.mp4" data-title="Queen Touch - Luxury Skincare Ad" data-category="AI Videos" data-description="An elegant product advertisement video for Queen Touch skincare, showcasing luxury branding with fluid visual dynamics.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 2: Jewelry Ad -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-02.mp4" poster="images/project-02-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Sparkle & Shine - Jewelry Collection</h3>
+                <p class="project-desc">High-end visual showcase for premium accessories.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-02.mp4" data-title="Sparkle & Shine - Jewelry Collection" data-category="AI Videos" data-description="A high-end visual showcase for premium jewelry, highlighting reflections, light play, and fine craftsmanship.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 3: Poster Portfolio -->
+          <div class="project-card" data-category="poster" data-tilt>
+            <div class="project-media">
+              <img src="images/project-03-thumbnail.jpg" alt="Marketing & Ad Poster Portfolio" loading="lazy">
+              <div class="project-overlay">
+                <span class="project-category">Marketing Ad Posters</span>
+                <h3 class="project-title">Marketing & Ad Poster Portfolio</h3>
+                <p class="project-desc">A curated collection of poster and branding campaigns.</p>
+                <button class="btn btn-sm modal-trigger" data-type="image" data-image="images/project-03-thumbnail.jpg" data-title="Marketing & Ad Poster Portfolio" data-category="Marketing Ad Posters" data-description="A curated collection of marketing ad posters and branding designs created for social media, product launches, and digital campaigns.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Cosmetics Edit -->
+          <div class="project-card" data-category="editing" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-04.mp4" poster="images/project-04-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Video Editing</span>
+                <h3 class="project-title">Glow Up - Cosmetics Video Edit</h3>
+                <p class="project-desc">Dynamic transitions and color grading for beauty products.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-04.mp4" data-title="Glow Up - Cosmetics Video Edit" data-category="AI Video Editing" data-description="A professionally edited promotional video for beauty and cosmetic products, demonstrating transitions, color grading, and dynamic cuts.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 5: Tharad Brand Promo -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-05.mp4" poster="images/project-05-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Tharad Commercial - Brand Promo</h3>
+                <p class="project-desc">Brand promo video showcasing identity and visual storytelling.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-05.mp4" data-title="Tharad Commercial - Brand Promo" data-category="AI Videos" data-description="A high-impact promotional campaign video showcasing local brand identity, community narratives, and visual storytelling.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Apparel Campaign -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-06.mp4" poster="images/project-06-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Vogue Style - Apparel Campaign</h3>
+                <p class="project-desc">Vibrant fashion campaign featuring apparel brand visual styling.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-06.mp4" data-title="Vogue Style - Apparel Campaign" data-category="AI Videos" data-description="A vibrant promotional video for a clothing line, featuring trendy aesthetics, visual styling, and seasonal fashion branding.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Biovea Parasite Formula (Vertical 9:16 Video) -->
+          <div class="project-card vertical-card" data-category="editing" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-07.mp4" poster="images/project-07-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Video Editing</span>
+                <h3 class="project-title">Biovea Parasite Formula</h3>
+                <p class="project-desc">A dynamic vertical product reel showcasing product advantages.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-07.mp4" data-title="Biovea Parasite Formula" data-category="AI Video Editing" data-description="A dynamic vertical product reel and promotional edit for Biovea Parasite Formula, showcasing branding and wellness visual storytelling.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 8: Mamaearth Ad (Landscape 16:9 Video) -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-08.mp4" poster="images/project-08-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Mamaearth - Creative Ad Concept</h3>
+                <p class="project-desc">A creative spec advertisement showcasing natural formulations.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-08.mp4" data-title="Mamaearth - Creative Ad Concept" data-category="AI Videos" data-description="A creative spec advertisement concept for Mamaearth, highlighting natural beauty formulations with polished editing.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: Kurta Outfits (Landscape 16:9 Video) -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-09.mp4" poster="images/project-09-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Kurta Outfits - Fashion Campaign</h3>
+                <p class="project-desc">A visually rich fashion advertisement for a Kurta collection.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-09.mp4" data-title="Kurta Outfits - Fashion Campaign" data-category="AI Videos" data-description="A visually rich fashion advertisement for a Kurta collection, highlighting traditional attire with modern brand styling.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 10: Hydration Bottle (Landscape 16:9 Video) -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-10.mp4" poster="images/project-10-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Hydration Bottle - Product Promo</h3>
+                <p class="project-desc">A creative product advertisement showcasing liquid dynamics.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-10.mp4" data-title="Hydration Bottle - Product Promo" data-category="AI Videos" data-description="A creative product advertisement showcasing styling and liquid dynamics for an eco-friendly hydration bottle.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 11: Mahadev Beauty Shop (Landscape 16:9 Video) -->
+          <div class="project-card" data-category="video" data-tilt>
+            <div class="project-media">
+              <video class="project-preview-video" src="videos/project-11.mp4" poster="images/project-11-thumbnail.jpg" loop muted playsinline preload="none"></video>
+              <div class="project-overlay">
+                <span class="project-category">AI Videos</span>
+                <h3 class="project-title">Mahadev Beauty Shop - Commercial</h3>
+                <p class="project-desc">A professional commercial promotional video for a beauty store.</p>
+                <button class="btn btn-sm modal-trigger" data-type="video" data-video="videos/project-11.mp4" data-title="Mahadev Beauty Shop - Commercial" data-category="AI Videos" data-description="A high-quality commercial promotional video for a beauty store, showcasing skincare and makeup products with elegant transitions.">Watch Project</button>
+              </div>
+              <div class="project-play-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <div class="muted-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: WHY WORK WITH ME -->
+    <div class="why-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Why Choose Me</span>
+          <h2>Why <span class="highlight">Work With Me</span></h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card" data-tilt>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <h3>Creative AI Approach</h3>
+            <p>I leverage cutting-edge AI tools combined with creative vision to produce visuals that stand out in today's crowded digital landscape.</p>
+          </div>
+          <div class="why-card" data-tilt>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <h3>Attention-Grabbing Visuals</h3>
+            <p>Every project is crafted to stop the scroll and capture your audience's attention within the first few seconds.</p>
+          </div>
+          <div class="why-card" data-tilt>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>
+            <h3>Customized for Your Brand</h3>
+            <p>Each project is tailored to match your brand's unique identity, voice, and objectives.</p>
+          </div>
+          <div class="why-card" data-tilt>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <h3>Clear Communication</h3>
+            <p>I believe in transparent collaboration. You'll always know the status of your project and have input at every stage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: PROCESS -->
+    <section id="process" class="process-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">How I Work</span>
+          <h2>My Creative <span class="highlight">Process</span></h2>
+        </div>
+        <div class="process-timeline">
+          <div class="process-step" data-step="01">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3 class="step-title">Tell Me Your Idea</h3>
+              <p class="step-desc">Share your vision, goals, and target audience. I'll listen carefully to understand exactly what you need.</p>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="process-step" data-step="02">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3 class="step-title">Concept & Creative Direction</h3>
+              <p class="step-desc">I'll develop a creative concept and visual direction that aligns with your brand and objectives.</p>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="process-step" data-step="03">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3 class="step-title">Creation & Editing</h3>
+              <p class="step-desc">Using advanced AI tools and creative techniques, I'll bring your concept to life with stunning visuals.</p>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="process-step" data-step="04">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h3 class="step-title">Review & Refinement</h3>
+              <p class="step-desc">You'll review the work and provide feedback. I'll refine until it perfectly matches your vision.</p>
+            </div>
+            <div class="step-line"></div>
+          </div>
+          <div class="process-step" data-step="05">
+            <div class="step-number">05</div>
+            <div class="step-content">
+              <h3 class="step-title">Final Delivery</h3>
+              <p class="step-desc">Your polished, ready-to-publish project is delivered in your preferred format and resolution.</p>
+            </div>
+            <div class="step-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TESTIMONIALS -->
+    <div class="testimonials-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Testimonials</span>
+          <h2>What <span class="highlight">Clients Say</span></h2>
+          <p class="section-subtitle">Here's what it's like to work with me.</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card" data-tilt>
+            <div class="testimonial-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlnshttp://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="testimonial-text">"Vidisha created an incredible AI product video for our brand launch. The quality and creativity exceeded our expectations. Highly recommend!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div class="author-info">
+                <h4>Alex M.</h4>
+                <span>Brand Manager</span>
+                <span class="placeholder-note">(Placeholder testimonial)</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-tilt>
+            <div class="testimonial-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="testimonial-text">"The social media reels Vidisha created drove amazing engagement..."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">R</div>
+              <div class="author-info">
+                <h4>Riya S.</h4>
+                <span>Digital Marketer</span>
+                <span class="placeholder-note">(Placeholder testimonial)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: CERTIFICATIONS & ACHIEVEMENTS -->
+    <section id="certifications" class="certifications-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Credentials</span>
+          <h2 class="section-title">Certifications & <span class="highlight">Achievements</span></h2>
+          <p class="section-subtitle">Official credentials verifying specialized training and masterclass completions in AI systems, creative visuals, and media editing.</p>
+        </div>
+        <div class="certifications-grid">
+          
+          <!-- Certificate 1: Freedom with AI -->
+          <div class="certificate-card" data-tilt>
+            <div class="certificate-media modal-trigger" data-type="image" data-image="images/freedom-with-ai-certificate.jpg" data-title="Freedom with AI Masterclass" data-category="Freedom with AI" data-description="Officially certified for successfully completing the Freedom with AI Masterclass, covering advanced generative AI creative workflows, video systems, and visual automation.">
+              <div class="certificate-glow"></div>
+              <img src="images/freedom-with-ai-certificate.jpg" alt="Freedom with AI Masterclass Certificate - Panchal Vidisha Pinkeshkumar" class="certificate-img" loading="lazy">
+              <div class="certificate-overlay">
+                <span class="cert-view-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                  View Certificate
+                </span>
+              </div>
+            </div>
+            <div class="certificate-info">
+              <span class="certificate-provider">Freedom with AI</span>
+              <h3 class="certificate-name">Freedom with AI Masterclass</h3>
+              <p class="certificate-date">Issued: 15/11/2025</p>
+            </div>
+          </div>
+
+          <!-- Certificate 2: Outskill -->
+          <div class="certificate-card" data-tilt>
+            <div class="certificate-media modal-trigger" data-type="image" data-image="images/outskill-certificate.jpg" data-title="Generative AI Mastermind" data-category="Outskill" data-description="Completed Generative AI Mastermind certification, proving advanced visual content creation, marketing poster layout, branding systems, and video editing credentials.">
+              <div class="certificate-glow"></div>
+              <img src="images/outskill-certificate.jpg" alt="Generative AI Mastermind Certificate - Panchal Vidisha Pinkeshkumar" class="certificate-img" loading="lazy">
+              <div class="certificate-overlay">
+                <span class="cert-view-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                  View Certificate
+                </span>
+              </div>
+            </div>
+            <div class="certificate-info">
+              <span class="certificate-provider">Outskill</span>
+              <h3 class="certificate-name">Generative AI Mastermind</h3>
+              <p class="certificate-date">Verified Credential</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CTA -->
+    <div class="cta-section section">
+      <div class="cta-bg-effects">
+        <div class="cta-orb orb-1"></div>
+        <div class="cta-orb orb-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="cta-content">
+          <h2 class="cta-title">Have an Idea? Let's Turn It Into <span class="highlight">Something Amazing.</span></h2>
+          <p class="cta-subtitle">Tell me about your project and let's create AI-powered visuals that make your brand stand out.</p>
+          <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary btn-lg">Start a Project</a>
+            <a href="https://wa.me/917567237009?text=Hi%20Vidisha!%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20your%20creative%20services.%20I%20would%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: CONTACT -->
+    <section id="contact" class="contact-section section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">Get In Touch</span>
+          <h2>Let's <span class="highlight">Connect</span></h2>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h3>Let's Start a Conversation</h3>
+            <p>Have a project in mind? I'd love to hear about it. Reach out through any of the channels below.</p>
+            <div class="contact-methods">
+              <a href="tel:+917567237009" class="contact-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <div>
+                  <span>Phone</span>
+                  <span>7567237009</span>
+                </div>
+              </a>
+              <a href="https://wa.me/917567237009?text=Hi%20Vidisha!%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20your%20creative%20services.%20I%20would%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="contact-method">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                <div>
+                  <span>WhatsApp</span>
+                  <span>7567237009</span>
+                </div>
+              </a>
+              <a href="mailto:vdsa5044@gmail.com" class="contact-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <div>
+                  <span>Email</span>
+                  <span>vdsa5044@gmail.com</span>
+                </div>
+              </a>
+              <a href="mailto:vedipanchal735@gmail.com" class="contact-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <div>
+                  <span>Alternative Email</span>
+                  <span>vedipanchal735@gmail.com</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/panchal-vidisha-8a80273b9" target="_blank" rel="noopener noreferrer" class="contact-method" aria-label="Visit Vidisha's LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div>
+                  <span>LinkedIn</span>
+                  <span>Connect on LinkedIn</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="contact-form-wrapper">
+            <form id="contact-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name *</label>
+                  <input id="name" type="text" required placeholder="John Doe">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Your Email *</label>
+                  <input id="email" type="email" required placeholder="john@example.com">
+                </div>
+              </div>
+              <div class="form-row form-row-2col">
+                <div class="form-group">
+                  <label for="phone">Phone / WhatsApp</label>
+                  <input id="phone" type="tel" placeholder="+91 XXXXXXXXXX">
+                </div>
+                <div class="form-group">
+                  <label for="company">Company / Brand</label>
+                  <input id="company" type="text" placeholder="Your Company">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="video-type">Type of Project Needed</label>
+                <select id="video-type">
+                  <option value="">Select a service</option>
+                  <option>AI Video Creation</option>
+                  <option>Marketing Ad Poster Design</option>
+                  <option>AI Video Editing</option>
+                  <option>Multiple Services</option>
+                  <option>Other Creative Project</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="details">Project Details *</label>
+                <textarea id="details" required placeholder="Tell me about your project..." rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select id="budget">
+                  <option value="">Select budget range</option>
+                  <option>Under ₹5,000</option>
+                  <option>₹5,000 - ₹15,000</option>
+                  <option>₹15,000 - ₹30,000</option>
+                  <option>₹30,000 - ₹50,000</option>
+                  <option>₹50,000+</option>
+                  <option>Let's discuss</option>
+                </select>
+              </div>
+              <p class="form-note">📧 Your email app will open with your inquiry ready to send.</p>
+              <button class="btn btn-primary btn-lg" type="submit">
+                Send Inquiry
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MEDIA MODAL -->
+  <div id="media-modal" class="video-modal" aria-hidden="true" role="dialog" aria-label="Media Player">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close media">✕</button>
+      <div class="modal-video-wrapper">
+        <video id="modal-video" controls preload="none" style="display:none; width: 100%; border-radius: 8px;"></video>
+        <img id="modal-img" src="" alt="Project Media" style="display:none; width: 100%; height: auto; border-radius: 8px;">
+      </div>
+      <div class="modal-info">
+        <span id="modal-category" class="modal-category"></span>
+        <h3 id="modal-title" class="modal-title"></h3>
+        <p id="modal-description" class="modal-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="footer-logo">VIDISHA<span class="logo-dot">.</span></a>
+          <p>AI Video Creator • Marketing Ad Designer • AI Video Editor</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a class="social-link" href="https://www.linkedin.com/in/panchal-vidisha-8a80273b9" aria-label="Visit Vidisha's LinkedIn Profile" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span class="social-tooltip">Connect on LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Vidisha. All Rights Reserved.</p>
+        <p>Designed with ♥ for creativity</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
